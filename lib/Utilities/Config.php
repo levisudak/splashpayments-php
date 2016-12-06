@@ -13,6 +13,15 @@ class Config {
 
   // sessionKey to make the requests
   private static $sessionKey;
+  
+  // set weather we want to use the sandbox mode
+  public static function setSandboxMode($sandbox = true) {
+   if($sandbox) {
+      self::$url = 'https://test-api.splashpayments.com';
+    } else {
+      self::$url = 'https://api.splashpayments.com';
+    }
+  }
 
   // Retrieve the current apiKey
   public static function getApiKey() {
